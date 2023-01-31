@@ -1,0 +1,34 @@
+
+.CardWrapper{
+    composes: CardWrapper from '../StepEmailorPhone/StepEmailorPhone.module.css';
+    margin-top: 6rem;
+}
+.ButtonWrapper{
+    composes: ButtonWrapper from '../StepEmailorPhone/Email/Email.module.css'
+}
+.AvatarWrapper{
+    padding-top: 0;
+    padding-bottom:0;
+    border:6px solid #0077ff;
+    border-radius: 50%;
+    width:110px;
+    height:110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.TextWrapper{
+    composes: TextWrapper from '../StepEmailorPhone/Email/Email.module.css';
+    padding-top: 4%;
+    padding-bottom:4%
+}
+.AvatarImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.fileInput{
+    display: none;
+}

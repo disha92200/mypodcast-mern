@@ -1,0 +1,36 @@
+.ButtonWrapper{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:22%
+}
+.InputWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:9% 10%;
+
+}
+.Input{
+    background: #262626;
+    border: none;
+    border-radius: 10px;
+    padding: 3% 15%;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    width:70%
+
+}
+
+.TextWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#C4C5C5;
+    font-size: 14px;
+    padding:5% 25%;
+    text-align: center;
+    line-height: 1.5;
+}

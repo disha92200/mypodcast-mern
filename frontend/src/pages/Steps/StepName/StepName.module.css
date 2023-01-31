@@ -1,0 +1,24 @@
+.CardWrapper{
+    composes: CardWrapper from '../StepEmailorPhone/StepEmailorPhone.module.css';
+    margin-top: 6rem;
+}
+.ButtonWrapper{
+    composes: ButtonWrapper from '../StepEmailorPhone/Email/Email.module.css'
+}
+.InputWrapper{
+    composes: InputWrapper from '../StepEmailorPhone/Email/Email.module.css';
+    padding-bottom:5%;
+}
+.Input{
+    composes: Input from '../StepEmailorPhone/Email/Email.module.css';
+    padding:4% 2%;
+    /* margin-left:10px; */
+    text-align: center;
+    width:100%
+}
+.TextWrapper{
+    composes: TextWrapper from '../StepEmailorPhone/Email/Email.module.css';
+}
+.TextWrapper p{
+    width:70%
+}

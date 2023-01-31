@@ -1,0 +1,22 @@
+.Button{
+    background: #0077FF;
+    border-radius: 50px;
+    color:#fff;
+    width: 100%;
+    height:42px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all .3s ease-in-out;
+}
+.ButtonText{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    margin-right: 7px;
+}
+.Button:hover{
+    background: #004dff;
+    cursor: pointer;
+}
