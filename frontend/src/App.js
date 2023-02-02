@@ -8,11 +8,15 @@ import Rooms from "./pages/Rooms/Rooms";
 import GuestRoute from "./components/GuestRoute/GuestRoute";
 import SemiProtectedRoute from "./components/SemiProtectedRoute/SemiProtectedRoute"
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-// import Register from './pages/Register/Register';
-// import Login from './pages/Login/Login';
+import useLoadingWithRefresh from "./hooks/useLoadingWithRefresh";
+import Loader from "./components/Loader/Loader";
 
 function App() {
-  return (
+  const {loading}=useLoadingWithRefresh();
+  return loading?(
+    <Loader message='Loading, please wait ...'/>
+  ):
+   (
     <BrowserRouter>
       <Navigation />
       <Routes>
@@ -32,53 +36,3 @@ function App() {
 }
 
 export default App;
-
-
-{/* <Route
-          path="/"
-          element={
-            <GuestRoute
-              Component={Home}
-              isAuth={isAuth}
-              user={user}
-            />
-          }
-        ></Route>
-        <Route
-          path="/authenticate"
-          element={
-            <GuestRoute
-              Component={Authenticate}
-              isAuth={isAuth}
-              user={user}
-            />
-          }
-        ></Route>
-
-        <Route
-          path="/activate"
-          element={
-            <SemiProtectedRoute
-              Component={<Activate />}
-              isAuth={isAuth}
-              user={user}
-            />
-          }
-        ></Route>
-
-        {/* <Route
-          path="/rooms"
-          element={
-            <ProtectedRoute
-              Component={<Rooms />}
-              isAuth={isAuth}
-              user={user}
-            />
-          }
-        ></Route> */}
-        // <Route
-        //   path="/rooms"
-        //   element={
-        //     <Rooms/>
-        //   }
-        // ></Route> */}

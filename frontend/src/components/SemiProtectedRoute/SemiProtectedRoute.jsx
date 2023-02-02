@@ -8,7 +8,7 @@ const SemiProtectedRoute = () => {
   return (
     !isAuth?
     <Navigate to="/"/>:
-    isAuth&&!user.activate?
+    isAuth&&!user.activated?
     <Outlet/>:
     <Navigate to="/rooms"/>
   );

@@ -1,0 +1,19 @@
+.CardWrapper{
+    composes:CardWrapper from '../../pages/Steps/StepEmailorPhone/StepEmailorPhone.module.css';
+    margin-top:5%;
+}
+.loadingLogo{
+    margin-bottom:4%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100%{
+        rotate: 360deg;
+    }
+}
+
+.loadingText{
+    font-size: 22px;
+    font-weight: bold;
+}

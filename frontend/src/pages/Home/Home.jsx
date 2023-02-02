@@ -8,7 +8,6 @@ const Home = () => {
   const [isHover, setIsHover] = useState(false);
   const RegisterLink = () => {
     navigate("/authenticate");
-    console.log("hello");
   };
   const SignInStyle = {
     color: isHover ? "#004dff" : "#0077ff",

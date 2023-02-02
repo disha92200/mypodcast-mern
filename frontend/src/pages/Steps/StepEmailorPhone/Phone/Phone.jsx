@@ -11,6 +11,10 @@ const Phone = ({ onClick }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const dispatch = useDispatch();
   const handleSubmit = async () => {
+    if(!phoneNumber){
+      alert('Please enter your phone number !')
+      return;
+    }
     const phone = `+91${phoneNumber}`;
     const { data } = await sendOtp({ phone });
     console.log(data);

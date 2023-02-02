@@ -1,7 +1,7 @@
 
 .CardWrapper{
     composes: CardWrapper from '../StepEmailorPhone/StepEmailorPhone.module.css';
-    margin-top: 6rem;
+    margin-top: 5%;
 }
 .ButtonWrapper{
     composes: ButtonWrapper from '../StepEmailorPhone/Email/Email.module.css'
@@ -31,4 +31,11 @@
 }
 .fileInput{
     display: none;
+}
+.inputImgLabel{
+    color:#0077ff;
+    cursor: pointer;
+}
+.inputImgLabel:hover{
+    color:#004dff;
 }

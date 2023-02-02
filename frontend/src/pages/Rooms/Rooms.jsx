@@ -1,9 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Rooms = () => {
+  const {name,avatar}=useSelector((state)=>state.auth.user)
   return (
     <div>
-      This is rooms
+      Room component
     </div>
   )
 }

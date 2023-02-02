@@ -8,7 +8,7 @@ const ProtectedRoute = () => {
   return (
     !isAuth?
     <Navigate to='/'/>:
-    isAuth&&!user.activate?
+    isAuth&&!user.activated?
     <Navigate to='/activate'/>:
     <Outlet/>
   )

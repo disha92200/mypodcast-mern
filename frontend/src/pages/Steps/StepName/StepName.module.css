@@ -1,6 +1,6 @@
 .CardWrapper{
     composes: CardWrapper from '../StepEmailorPhone/StepEmailorPhone.module.css';
-    margin-top: 6rem;
+    margin-top: 5%;
 }
 .ButtonWrapper{
     composes: ButtonWrapper from '../StepEmailorPhone/Email/Email.module.css'

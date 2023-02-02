@@ -13,6 +13,10 @@ const StepOtp = ({ onClick }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSubmit = async () => {
+    if(!phone||!hash||!otp){
+      alert('Please enter otp !')
+      return;
+    }
     try {
       const { data } = await verifyOtp({ otp, phone, hash });
       console.log(data);

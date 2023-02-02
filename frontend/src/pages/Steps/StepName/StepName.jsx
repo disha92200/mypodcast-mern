@@ -15,10 +15,11 @@ const StepName = ({ onClick }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
-
-    if (!fullName) {
+    if(!fullName){
+      alert('Please enter your name !')
       return;
     }
+
     dispatch(setName({ name: fullName }));
     onClick();
   };
