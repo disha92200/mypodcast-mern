@@ -33,8 +33,10 @@ const Navigation = () => {
         </div>
         {isAuth&&  (
           <div className={styles.navRight}>
-            <span className={styles.name}>{user.name}</span>
+            {user.activated&&<>
+              <span className={styles.name}>{user.name}</span>
             <Link to='/'><img className={styles.avatar} src={user.avatar} alt="logo" /></Link>
+            </>}
             <button className={styles.logoutButton} onClick={handleLogout}>
               <img src="/images/logout.png" alt="logo" />
             </button>

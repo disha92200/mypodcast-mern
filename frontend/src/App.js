@@ -10,6 +10,7 @@ import SemiProtectedRoute from "./components/SemiProtectedRoute/SemiProtectedRou
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import useLoadingWithRefresh from "./hooks/useLoadingWithRefresh";
 import Loader from "./components/Loader/Loader";
+import Room from "./pages/Room/Room";
 
 function App() {
   const {loading}=useLoadingWithRefresh();
@@ -29,6 +30,7 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route element={<Rooms/>} path="/rooms"/>
+          <Route element={<Room/>} path="/room/:id"/>
         </Route>
       </Routes>
     </BrowserRouter>

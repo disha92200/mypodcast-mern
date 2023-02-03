@@ -8,8 +8,8 @@ import { setName } from "../../../store/activateSlice";
 
 const StepName = ({ onClick }) => {
 
-  const name=useSelector((state)=>state.activate.name)
-
+  let name=useSelector((state)=>state.activate.name)
+  name=name?name:'';
   const [fullName, setFullName] = useState(name);
 
   const dispatch = useDispatch();

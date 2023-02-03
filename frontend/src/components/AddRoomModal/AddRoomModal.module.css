@@ -1,0 +1,123 @@
+.modalMask{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    background: rgba(0,0,0,0.6);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBody{
+    height: 460px;
+    width:440px;
+    background: #1D1D1D;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+.modalHeader{
+    padding:35px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.heading{
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.modalHeader input{
+    background: #262626;
+    outline: none;
+    border:none;
+    border-radius: 10px;
+    width:93%;
+    height:40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color:#fff;
+    font-size: 18px;
+    font-family: 'Nunito';
+}
+.typeHeading{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.modalRoomType{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.modalRoomType .active{
+    background: #262626;
+    
+}
+.modalRoomType button{
+    height:120px;
+    width:120px;
+    background: transparent;
+    border:none;
+    border-radius: 10px;
+    transition:all .2s ease-in-out;
+    cursor: pointer;
+}
+/* .modalRoomType button:hover{
+    background: #262626;
+    
+} */
+.modalRoomType button p{
+    color:#fff;
+    font-size:16px;
+    padding:10px;
+    font-family: 'Nunito';
+}
+
+hr{
+    border-top:solid 1px #262626;
+    margin:0;
+}
+.footerText{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+.footerButtonWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footerButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    border-radius: 50px;
+    background: #20BD5F;
+    padding:9px 30px;
+    transition:all .2s ease-in-out;
+
+}
+.footerButton span{
+color:#fff;
+font-size: 18px;
+font-weight: bold;
+font-family: 'Nunito';
+margin-left: 10px;
+}
+.footerButton:hover{
+    background: #0f6632;
+    cursor: pointer;
+}
+
+.crossButton{
+    background: transparent;
+    border:none;
+    margin-left: 92%;
+    margin-top: 2%;
+    cursor:pointer;
+}

@@ -25,6 +25,12 @@ export const activate=async (data)=>{
 export const logout=async ()=>{
     return await api.post('/api/logout')
 }
+export const createRoom=async (data)=>{
+    return await api.post('/api/rooms',data)
+}
+export const getAllRooms=async (data)=>{
+    return await api.get('/api/rooms',data)
+}
 
 
 //interceptors

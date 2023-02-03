@@ -1,6 +1,7 @@
 .NavbarWrapper{
     margin-top: 40px;
-    margin-left: 50px;
+    margin-left: 6%;
+    margin-right: 6%;
 }
 .Navbar{
     display:flex;
@@ -55,5 +56,13 @@
     background: transparent;
     border:none;
     cursor: pointer;
-    margin-right: 50px;
 }
+
+@media (max-width: 900px) {
+    .Navbar { 
+        display:block;
+     }
+     .navRight{
+        margin-top:4%;
+     }
+  }
