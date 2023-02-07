@@ -113,7 +113,6 @@
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #5453E0;
 }
 .userWrapper h4{
     padding-top: 15px;
