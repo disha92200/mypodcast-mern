@@ -13,13 +13,13 @@ const StepOtp = ({ onClick }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSubmit = async () => {
-    if(!phone||!hash||!otp){
-      alert('Please enter otp !')
+    if (!phone || !hash || !otp) {
+      alert("Please enter otp !");
       return;
     }
     try {
       const { data } = await verifyOtp({ otp, phone, hash });
-      console.log(data);
+      //console.log(data);
       dispatch(setAuth({ user: data.user }));
       //navigate("/activate");
     } catch (err) {

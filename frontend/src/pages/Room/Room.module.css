@@ -1,0 +1,142 @@
+.container {
+    margin-left: 6%;
+    margin-right: 6.5%;
+    margin-top: 25px;
+}
+.goBack{
+    margin-bottom: 35px;
+    font-weight: bold;
+    background: transparent;
+    color:#fff;
+    border:none;
+    font-family: 'Nunito';
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width:270px;
+    outline:none;
+    cursor:pointer;
+    position: relative;
+}
+.goBack img{
+    margin-right: 20px;
+}
+.goBack span::after{
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 40px;
+    width:30%;
+    height:4px;
+    background: #0077ff;
+    border-radius: 10px;
+    border:none;
+}
+.clientWrapper{
+    background: #1d1d1d;
+    min-height: calc(100vh - 235px);
+    border-top-left-radius:20px ;
+    border-top-right-radius: 20px;
+    padding:2%;
+}
+.clientHeader{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clientHeader h2{
+    font-size: 20px;
+}
+
+.headerRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.headerRight button{
+    background: #262626;
+    color:#fff;
+    border:none;
+    outline:none;
+    cursor: pointer;
+}
+.headerRight button:hover{
+    background: #252525;
+}
+.handButton{
+    width:35px;
+    height:35px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.leaveButton{
+    width:150px;
+    height:35px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leaveButton img{
+    margin-right: 10px;
+}
+.leaveButton span{
+    font-family: 'Nunito';
+    font-weight: bold;
+    font-size: 16px;
+}
+.userWrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.clientList{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:30px;
+}
+.userHead{
+    padding-top: 15px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position:relative;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #5453E0;
+}
+.userWrapper h4{
+    padding-top: 15px;
+    text-align: center;
+}
+.micOff{
+    position: absolute;
+    bottom:0;
+    right:5px;
+    background: #212121;
+    border:none;
+    outline:none;
+    border-radius: 50%;
+    cursor: pointer;
+    width:30px;
+    height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+}
+.micOff img{
+    width:20px;
+    height:20px;
+    object-fit: cover;
+}
