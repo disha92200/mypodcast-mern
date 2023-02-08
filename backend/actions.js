@@ -9,5 +9,7 @@ const ACTIONS = {
   REMOVE_PEER: "remove-peer",
   MUTE: "mute",
   UN_MUTE: "un-mute",
+  RAISE_HAND: "raise-hand",
+  UNRAISE_HAND: "unraise-hand",
 };
 module.exports = ACTIONS;

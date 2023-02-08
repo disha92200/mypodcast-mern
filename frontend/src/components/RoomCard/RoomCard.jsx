@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const RoomCard = ({ room }) => {
   const navigate = useNavigate();
+  const colors = ["#5453E0", "#BB6BD9", "#E91E63", "#219653", "#F2C94C"];
 
   return (
     <div
@@ -24,6 +25,11 @@ const RoomCard = ({ room }) => {
               <img
                 key={speaker._id}
                 className={styles.avatar}
+                style={{
+                  border: `solid 3px ${
+                    colors[Math.floor(Math.random() * colors.length)]
+                  }`,
+                }}
                 src={speaker.avatar}
                 alt=""
               />

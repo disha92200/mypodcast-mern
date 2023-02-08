@@ -105,6 +105,24 @@ io.on("connection", (socket) => {
       });
     });
   });
+  socket.on(ACTIONS.RAISE_HAND, ({ roomId, userId }) => {
+    const clients = Array.from(io.sockets.adapter.rooms.get(roomId) || []);
+    clients.forEach((clientId) => {
+      io.to(clientId).emit(ACTIONS.RAISE_HAND, {
+        peerId: socket.id,
+        userId,
+      });
+    });
+  });
+  socket.on(ACTIONS.UNRAISE_HAND, ({ roomId, userId }) => {
+    const clients = Array.from(io.sockets.adapter.rooms.get(roomId) || []);
+    clients.forEach((clientId) => {
+      io.to(clientId).emit(ACTIONS.UNRAISE_HAND, {
+        peerId: socket.id,
+        userId,
+      });
+    });
+  });
 });
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));

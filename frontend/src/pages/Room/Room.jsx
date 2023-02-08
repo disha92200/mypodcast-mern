@@ -9,14 +9,17 @@ const Room = () => {
   const navigate = useNavigate();
   const { id: roomId } = useParams();
   const { user } = useSelector((state) => state.auth);
-  const { clients, provideRef, handleMute } = useWebRTC(roomId, user);
+  const { clients, provideRef, handleMute, handleRaiseHand } = useWebRTC(
+    roomId,
+    user
+  );
   const [isMute, setIsMute] = useState(true);
+  const [isRaiseHand, setIsRaiseHand] = useState(false);
   const handleManualLeave = () => {
     navigate("/rooms");
   };
-  const avatarStyle = {
-    border: `3px solid #5453E0`,
-  };
+
+  const colors = ["#5453E0", "#BB6BD9", "#E91E63", "#219653", "#F2C94C"];
   const [room, setRoom] = useState(null);
   useEffect(() => {
     getRoom(roomId).then(({ data }) => {
@@ -26,9 +29,16 @@ const Room = () => {
   useEffect(() => {
     handleMute(isMute, user.id);
   }, [isMute]);
+  useEffect(() => {
+    handleRaiseHand(isRaiseHand, user.id);
+  }, [isRaiseHand]);
+
   const handleButtonMute = (clientId) => {
     if (clientId != user.id) return;
     setIsMute((prev) => !prev);
+  };
+  const handleRaiseHandButton = () => {
+    setIsRaiseHand((prev) => !prev);
   };
   return (
     <div>
@@ -42,7 +52,10 @@ const Room = () => {
         <div className={styles.clientHeader}>
           <h2>{room && room.topic}</h2>
           <div className={styles.headerRight}>
-            <button className={styles.handButton}>
+            <button
+              className={styles.handButton}
+              onClick={handleRaiseHandButton}
+            >
               <img src="/images/hand.png" alt="hand" />
             </button>
             <button className={styles.leaveButton} onClick={handleManualLeave}>
@@ -52,7 +65,7 @@ const Room = () => {
           </div>
         </div>
         <div className={styles.clientList}>
-          {clients.map((client) => {
+          {clients?.map((client, index) => {
             return (
               <div key={client.id} className={styles.userWrapper}>
                 <div className={styles.userHead}>
@@ -63,7 +76,7 @@ const Room = () => {
                   <img
                     src={client.avatar}
                     className={styles.avatar}
-                    style={avatarStyle}
+                    style={{ border: `3px solid ${colors[index % 5]}` }}
                     alt=""
                   />
                   <button
@@ -77,7 +90,18 @@ const Room = () => {
                     )}
                   </button>
                 </div>
-                <h4>{client.name}</h4>
+                <div className={styles.nameText}>
+                  <h4>{client.name}</h4>
+                  {client.raiseHand ? (
+                    <img
+                      className={styles.handRaise}
+                      src="/images/hand.png"
+                      alt=""
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
             );
           })}
