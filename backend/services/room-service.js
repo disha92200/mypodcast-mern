@@ -16,6 +16,12 @@ class RoomService {
       .populate("ownerId")
       .exec();
   }
+  async getUserRooms(ownerId) {
+    return await RoomModel.find({ ownerId })
+      .populate("speakers")
+      .populate("ownerId")
+      .exec();
+  }
   async getRoomById(roomId) {
     return await RoomModel.findOne({ _id: roomId })
       .populate("speakers")

@@ -22,6 +22,16 @@ time, mark, audio, video {
 body {
     line-height:1;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {

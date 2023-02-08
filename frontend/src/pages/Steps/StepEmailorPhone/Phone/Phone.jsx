@@ -11,15 +11,19 @@ const Phone = ({ onClick }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const dispatch = useDispatch();
   const handleSubmit = async () => {
-    if(!phoneNumber){
-      alert('Please enter your phone number !')
+    if (!phoneNumber) {
+      alert("Please enter your phone number !");
       return;
     }
-    const phone = `+91${phoneNumber}`;
-    const { data } = await sendOtp({ phone });
-    console.log(data);
-    dispatch(setOtp({ phone: data.phone, hash: data.hash }));
-    onClick();
+    try {
+      const phone = `+91${phoneNumber}`;
+      const { data } = await sendOtp({ phone });
+      console.log(data);
+      dispatch(setOtp({ phone: data.phone, hash: data.hash }));
+      onClick();
+    } catch (err) {
+      alert(err.response.data.message);
+    }
   };
   return (
     <Card title="Enter your phone number" logo="./images/phone.png">

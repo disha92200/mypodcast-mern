@@ -37,6 +37,15 @@ class RoomsController {
       return res.status(500).json({ message: "Internal Error" });
     }
   }
+  async indexByOwner(req, res) {
+    const { ownerId } = req.params;
+    console.log(ownerId);
+    const rooms = await roomService.getUserRooms(ownerId);
+    const allRooms = rooms.map((room) => {
+      return new RoomDto(room);
+    });
+    return res.json(allRooms);
+  }
 }
 
 module.exports = new RoomsController();

@@ -45,6 +45,17 @@
 }
 .leftText{
     position:relative;
+    color: #fff;
+    border:none;
+    background: transparent;
+    outline:none;
+    font-family: 'Nunito';
+    cursor:pointer;
+}
+.leftText option{
+    color:#121212;
+    font-size: 16px;
+    font-weight: bold;
 }
 .leftText::after{
     content:'';

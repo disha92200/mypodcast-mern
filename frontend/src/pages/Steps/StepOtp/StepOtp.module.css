@@ -13,8 +13,25 @@
     width:40%;
     /* margin-left:10px; */
     text-align: center;
+    outline:none;
+}
+.inputWithIcon {
+    background: #262626;
+    width:250px;
+    height:50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .TextWrapper{
     composes: TextWrapper from '../StepEmailorPhone/Email/Email.module.css';
     padding-top: 0%;
+}
+.resendText{
+    margin-left:7px;
+    cursor: pointer;
+}
+input[type=number] {
+    -webkit-text-security: disc;
 }

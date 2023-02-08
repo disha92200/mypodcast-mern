@@ -12,5 +12,10 @@ router.post("/api/logout", authMiddleware, authController.logout);
 router.post("/api/rooms", authMiddleware, roomsController.create);
 router.get("/api/rooms", authMiddleware, roomsController.index);
 router.get("/api/rooms/:roomId", authMiddleware, roomsController.show);
+router.get(
+  "/api/rooms/owner/:ownerId",
+  authMiddleware,
+  roomsController.indexByOwner
+);
 
 module.exports = router;

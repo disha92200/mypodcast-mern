@@ -31,6 +31,9 @@ export const createRoom = async (data) => {
 export const getAllRooms = async () => {
   return await api.get("/api/rooms");
 };
+export const getUserRooms = async (ownerId) => {
+  return await api.get(`/api/rooms/owner/${ownerId}`);
+};
 export const getRoom = async (roomId) => {
   return await api.get(`/api/rooms/${roomId}`);
 };

@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import AddRoomModal from "../../components/AddRoomModal/AddRoomModal";
 import RoomCard from "../../components/RoomCard/RoomCard";
-import { getAllRooms } from "../../http";
+import { getAllRooms, getUserRooms } from "../../http";
+import { useSelector } from "react-redux";
 import styles from "./Rooms.module.css";
 // const rooms = [
 //     {
@@ -76,17 +77,25 @@ import styles from "./Rooms.module.css";
 //     },
 // ];
 const Rooms = () => {
+  const { user } = useSelector((state) => state.auth);
   const [showModal, setShowModal] = useState(false);
   const [rooms, setRooms] = useState([]);
   const [showRooms, setShowRooms] = useState([]);
+  const [roomType, setRoomType] = useState("all");
 
   useEffect(() => {
     (async () => {
-      const { data } = await getAllRooms();
-      setRooms(data);
-      setShowRooms(data);
+      if (roomType === "all") {
+        const { data } = await getAllRooms();
+        setRooms(data);
+        setShowRooms(data);
+      } else {
+        const { data } = await getUserRooms(user.id);
+        setRooms(data);
+        setShowRooms(data);
+      }
     })();
-  }, []);
+  }, [roomType]);
 
   const handleModal = () => {
     setShowModal(true);
@@ -103,12 +112,24 @@ const Rooms = () => {
       })
     );
   };
+  const handleRoomTypeChange = (e) => {
+    setRoomType(e.target.value);
+  };
   return (
     <>
       <div className={styles.container}>
         <div className={styles.headerWrapper}>
           <div className={styles.left}>
-            <span className={styles.leftText}>All voice rooms</span>
+            <select
+              className={styles.leftText}
+              name=""
+              id=""
+              onChange={handleRoomTypeChange}
+            >
+              <option value="all">All voice rooms</option>
+              <option value="my">My voice rooms</option>
+            </select>
+            {/* <span className={styles.leftText}>All voice rooms</span> */}
             <div className={styles.inputWrapper}>
               <img
                 className={styles.searchImg}
