@@ -17,5 +17,6 @@ router.get(
   authMiddleware,
   roomsController.indexByOwner
 );
+router.post("/api/login-email", authController.loginEmail);
 
 module.exports = router;

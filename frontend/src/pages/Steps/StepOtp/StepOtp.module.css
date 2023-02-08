@@ -32,6 +32,6 @@
     margin-left:7px;
     cursor: pointer;
 }
-input[type=number] {
+.inputWithIcon input[type=number] {
     -webkit-text-security: disc;
 }

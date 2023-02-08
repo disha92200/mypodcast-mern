@@ -3,7 +3,7 @@ const hashService = require("../services/hash-service");
 const userService = require("../services/user-service");
 const tokenService = require("../services/token-service");
 const UserDto = require("../dtos/user-dto");
-const refreshModel = require("../models/refresh-model");
+const jwtDecode = require("jwt-decode");
 
 class AuthController {
   async sendOtp(req, res) {
@@ -167,6 +167,54 @@ class AuthController {
     res.clearCookie("accessToken");
 
     res.json({ user: null, auth: false });
+  }
+  async loginEmail(req, res) {
+    if (req.body.token) {
+      const credentials = jwtDecode(req.body.token);
+      //console.log(credentials);
+      if (credentials) {
+        const { email, name } = credentials;
+        //console.log(email, name);
+        let user;
+        try {
+          user = await userService.findUser({ phone: email });
+          //console.log(user);
+          if (!user) {
+            user = await userService.createUser({ phone: email, name });
+            //console.log(user);
+          }
+        } catch (err) {
+          console.log(err);
+          res.status(500).json({ message: "Db error" });
+          return;
+        }
+
+        const { accessToken, refreshToken } = tokenService.generateTokens({
+          _id: user._id,
+          activated: false,
+        });
+        //console.log(accessToken, refreshToken);
+
+        await tokenService.storeRefreshToken(refreshToken, user._id);
+
+        res.cookie("refreshToken", refreshToken, {
+          maxAge: 1000 * 60 * 60 * 24 * 30,
+          httpOnly: true,
+        });
+
+        res.cookie("accessToken", accessToken, {
+          maxAge: 1000 * 60 * 60 * 24 * 30,
+          httpOnly: true,
+        });
+
+        const userDto = new UserDto(user);
+        return res.json({ user: userDto, auth: true });
+      } else {
+        return res.status(400).json({ message: "user not found wrong token" });
+      }
+    } else {
+      return res.json({});
+    }
   }
 }
 

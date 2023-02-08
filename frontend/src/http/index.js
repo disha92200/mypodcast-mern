@@ -38,6 +38,9 @@ export const getRoom = async (roomId) => {
   return await api.get(`/api/rooms/${roomId}`);
 };
 
+export const loginEmail = async (data) => {
+  return await api.post("/api/login-email", data);
+};
 //interceptors
 
 api.interceptors.response.use(
