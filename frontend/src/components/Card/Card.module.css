@@ -1,8 +1,9 @@
 .Card{
     width:650px;
     height:480px;
-    background: #1D1D1D;
-    border-radius: 20px;
+    background: #fff;
+    box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.2);
+    /* border-radius: 20px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +21,7 @@
     margin-right: 15px;
 }
 .HeadingText{
+    color:#000;
     font-weight: bold;
     font-size: 22px;
     text-align: center;

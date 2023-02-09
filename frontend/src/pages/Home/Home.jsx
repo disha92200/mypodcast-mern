@@ -10,7 +10,7 @@ const Home = () => {
     navigate("/authenticate");
   };
   const SignInStyle = {
-    color: isHover ? "#004dff" : "#0077ff",
+    color: isHover ? "#be2134" : "#EB1D36",
     textDecoration: "none",
     fontWeight: "bold",
     cursor: "pointer",

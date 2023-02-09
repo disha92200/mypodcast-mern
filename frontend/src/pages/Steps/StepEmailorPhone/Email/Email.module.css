@@ -16,11 +16,12 @@
 
 }
 .Input{
-    background: #262626;
-    border: none;
-    border-radius: 10px;
+    background: #fff;
+    border: 2px solid #b9b9b9;
+    border-radius: 5px;
     padding: 3% 15%;
-    color: #fff;
+    color: #3a3a3a;
+    font-family: 'Nunito';
     font-size: 22px;
     text-align: center;
     width:70%
@@ -31,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#C4C5C5;
+    color: #616161;
     font-size: 14px;
     padding:5% 25%;
     text-align: center;

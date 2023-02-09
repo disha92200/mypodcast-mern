@@ -37,17 +37,18 @@ const StepOtp = ({ onClick }) => {
     <div className={styles.CardWrapper}>
       <Card title="Enter the code we just texted you" logo="./images/otp.png">
         <div className={styles.InputWrapper}>
-          <div className={styles.inputWithIcon}>
+          <input
+            className={styles.Input}
+            type="number"
+            onChange={(e) => {
+              setGivenOtp(e.target.value);
+            }}
+            onWheel={(e) => e.target.blur()}
+          />
+          {/* <div className={styles.inputWithIcon}>
             <img src="/images/flag.png" alt="" />
-            <input
-              className={styles.Input}
-              type="number"
-              onChange={(e) => {
-                setGivenOtp(e.target.value);
-              }}
-              onWheel={(e) => e.target.blur()}
-            />
-          </div>
+            
+          </div> */}
           {/* <input className={styles.Input} type='number'/>
             <input className={styles.Input} type='number'/>
             <input className={styles.Input} type='number'/> */}

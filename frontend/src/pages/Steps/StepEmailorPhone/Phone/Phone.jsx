@@ -28,14 +28,17 @@ const Phone = ({ onClick }) => {
   return (
     <Card title="Enter your phone number" logo="./images/phone.png">
       <div className={styles.InputWrapper}>
-        <input
-          className={styles.Input}
-          type="number"
-          onChange={(e) => {
-            setPhoneNumber(e.target.value);
-          }}
-          onWheel={(e) => e.target.blur()}
-        />
+        <div className={styles.inputWithIcon}>
+          <img src="/images/flag.png" alt="" />
+          <input
+            className={styles.Input}
+            type="number"
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }}
+            onWheel={(e) => e.target.blur()}
+          />
+        </div>
       </div>
       <div className={styles.ButtonWrapper}>
         <Button text="Next" onSubmit={handleSubmit} />

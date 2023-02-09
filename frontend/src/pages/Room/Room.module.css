@@ -29,16 +29,17 @@
     left: 40px;
     width:30%;
     height:4px;
-    background: #0077ff;
+    background: #fff;
     border-radius: 10px;
     border:none;
 }
 .clientWrapper{
-    background: #1d1d1d;
+    background: #fff;
     min-height: calc(100vh - 235px);
     border-top-left-radius:20px ;
     border-top-right-radius: 20px;
     padding:2%;
+    color:#3a3a3a;
 }
 .clientHeader{
     display:flex;
@@ -57,14 +58,14 @@
 
 }
 .headerRight button{
-    background: #262626;
+    background: #EB1D36;
     color:#fff;
     border:none;
     outline:none;
     cursor: pointer;
 }
 .headerRight button:hover{
-    background: #252525;
+    background: #be2134;
 }
 .handButton{
     width:35px;

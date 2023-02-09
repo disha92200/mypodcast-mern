@@ -76,7 +76,7 @@ const Room = () => {
                   <img
                     src={client.avatar}
                     className={styles.avatar}
-                    style={{ border: `3px solid ${colors[index % 5]}` }}
+                    style={{ border: `4px solid ${colors[index % 5]}` }}
                     alt=""
                   />
                   <button

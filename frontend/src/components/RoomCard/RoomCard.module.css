@@ -1,9 +1,11 @@
 .roomCard{
-    background:#1D1D1D;
-    border-radius: 10px;
+    background:#fff;
+    color: #3a3a3a;
+    /* border-radius: 10px; */
     padding:30px;
     cursor:pointer;
     margin-bottom: 0;
+    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
 }
 .roomTopic{
     font-size:18px;
@@ -40,6 +42,7 @@
 }
 .name{
     font-size: 16px;
+    font-weight: bold;
     padding:2px;
     text-align: left;
 }

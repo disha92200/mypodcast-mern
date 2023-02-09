@@ -15,15 +15,7 @@
     text-align: center;
     outline:none;
 }
-.inputWithIcon {
-    background: #262626;
-    width:250px;
-    height:50px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .TextWrapper{
     composes: TextWrapper from '../StepEmailorPhone/Email/Email.module.css';
     padding-top: 0%;
@@ -32,6 +24,9 @@
     margin-left:7px;
     cursor: pointer;
 }
-.inputWithIcon input[type=number] {
+.InputWrapper input[type=number] {
     -webkit-text-security: disc;
+}
+.CardWrapper img{
+    margin-bottom:7px;
 }
