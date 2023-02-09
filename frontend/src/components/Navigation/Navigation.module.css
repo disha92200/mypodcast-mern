@@ -47,6 +47,7 @@
     border-radius: 50%;
     margin-right: 2px;
     border:solid 5px #eb6d7c;
+    background:#fff;
     display:flex;
     justify-content: center;
     align-items: center;
